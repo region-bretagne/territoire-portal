@@ -1,0 +1,87 @@
+/*******************************************************************************************
+--------------------- FEUILLE DE STYLE PORTAIL DE L'INDEX DU DEVELOPPEMENT DURABLE.
+********************************************************************************************/
+
+.h1, .h2, .h3, .h4, h1, h2, h3, h4{
+	color:#2D4059;
+}
+
+/*--------NAVBAR------*/
+@font-face {
+		    font-family: 'spotka-alternatebold';
+		    src: url('../fonts/spotka-alternatebold.ttf');
+		}
+.navbar-brand{
+	font-family: 'spotka-alternatebold';
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+	color: #ecf0f1;
+    background-color: rgba(255, 255, 255, 0.23);
+}
+.navbar-brand>img {
+	display: inline-block;
+	margin-top: -3px;
+}
+
+/*--------MAP------*/
+
+
+/*--------DASHBOARD------*/
+#select_localisation h3{
+	font-weight: 500;
+}
+
+ul.nav.nav-tabs{
+	margin-top: 15px;
+}
+
+.nav-tabs.nav-justified>.active>a {
+	font-weight: 500;
+	color:#2D4059;
+	text-decoration: underline;
+}
+.nav-tabs.nav-justified>li>a {
+	font-weight: 400;
+	color:#777;
+}
+
+.iframe_data{
+	width: 970px;
+    height: 300px;
+    border: none;
+    overflow: hidden;
+}
+.tab-pane h2 {
+	font-weight: 600;
+}
+
+.panel-body{
+	text-align: center
+}
+
+.panel-body h4{
+	font-weight: 500;
+}
+
+/****************************************************************
+--------------------------------RESPONSIVE------*/
+/****************************************************************/
+@media (max-width:767px){
+	.home_highlight{
+		padding: 30px 35px 30px 35px;
+	}
+}
+
+@media (min-width: 768px){
+	/*** NAVBAR ***/
+	.navbar-nav {
+		float:right;
+	}
+	
+	.home_container{
+		padding-right:100px;
+		padding-left: 100px;
+	}
+
+}

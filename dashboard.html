@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow:overlay;">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Kartenn Territoire</title>
+
+    <!-- Bootstrap Core CSS -->
+     <link href="css/theme.min.css" rel="stylesheet">
+    <link href="css/kartenn_territoire_portal.css" rel="stylesheet">
+    <link href="css/sticky-footer.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 60px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"> 
+                    <img src="img/rb_blanc.svg" style="width:35px; margin-top:-8px; margin-right:8px;">
+                    <span>Kartenn Territoire</span>
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Portail cartographique</a>                    
+                    </li>
+                    <li>
+                        <a href="dashboard.html">Tableau de bord</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+      <div id="select_localisation">
+       <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Sélectionner une intercommunalité ...</h3>   
+       <select class="form-control" id="lst_geo" onchange="change_codegeo(this.value);">
+                    <option label="Lorient Agglomération" value="200065928">Lorient Agglomération</option>
+                    <option label="Lannion Trégor Communauté" value="200042174">Lannion Trégor Communauté</option>
+                    <option label="Lamballe Terre et Mer" value="200069391">Lamballe Terre et Mer</option>
+                    <option label="Vitré Communauté" value="200039022">Vitré Communauté</option>                     
+        </select>
+      </div>  
+
+        <!-- Nav-tabs -->
+        <ul class="nav nav-tabs nav-justified">
+          <li role="presentation" class="active"><a href="#h_population" role="tab" data-toggle="tab">Population</a></li>
+          <li role="presentation"><a href="#h_revenu" role="tab" data-toggle="tab">Revenu</a></li>
+          <li role="presentation"><a href="#h_formation" role="tab" data-toggle="tab">Formation</a></li>
+          <li role="presentation"><a href="#h_menage" role="tab" data-toggle="tab">Ménages</a></li>
+          <li role="presentation"><a href="#h_logement" role="tab" data-toggle="tab">Logement</a></li>
+          <li role="presentation"><a href="#h_economie" role="tab" data-toggle="tab">Économie et emploi</a></li>
+          <li role="presentation"><a href="#h_travail" role="tab" data-toggle="tab">Marché du travail</a></li>
+        </ul>
+        <!-- /Nav-tabs -->
+
+        <!-- Tab pane -->        
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="h_population">
+               <h2>Population</h2>
+               <div class="panel panel-default">
+                  <div class="panel-body">
+                    <h4>Nombre d'habitant.e.s en 2013</h4>
+                    <iframe class=" iframe_data" src="../ws/territoire/pop.nbr_habitant.epci.php?code_geo=200042174&amp;time=2013-02-01"></iframe>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <h4>Évolution de la population de 2008 à 2013</h4>
+                    <iframe class=" iframe_data" src="../ws/territoire/pop.evolution.epci.php?code_geo=200042174"></iframe>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <h4>Solde de la population de 1999 à 2013</h4>
+                    <iframe class=" iframe_data" src="../ws/territoire/pop.solde.epci.php?code_geo=200042174"></iframe>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <h4>Répartition de la population selon la catégorie d'âge en 2013 </h4>
+                    <iframe class=" iframe_data" src="../ws/territoire/pop.cat_age.epci.php?code_geo=200042174&amp;time=2013-02-01"></iframe>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <h4>Répartition de la population selon la catégorie socio-professionnelle en 2013</h4>
+                    <iframe class=" iframe_data" src="../ws/territoire/pop.csp.epci.php?code_geo=200042174&amp;time=2013-02-01"></iframe>
+                  </div>
+                </div>
+            </div> 
+            <div role="tabpanel" class="tab-pane" id="h_revenu">
+                <h2>Revenu</h2>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <h4>Revenu médian en 2013</h4>
+                    <iframe class=" iframe_data" src="../ws/territoire/pop.revenu.epci.php?code_geo=200042174&amp;time=2013-02-01"></iframe>
+                  </div>
+                </div>                   
+            </div>  
+            <div role="tabpanel" class="tab-pane" id="h_formation">
+                <h2>Formation</h2>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <h4>Répartition de la population selon le niveau de formation en 2013</h4>
+                    <iframe class=" iframe_data" src="../ws/territoire/pop.formation.epci.php?code_geo=200042174&amp;time=2013-02-01"></iframe>
+                  </div>
+                </div>                   
+            </div> 
+            <div role="tabpanel" class="tab-pane" id="h_menage">
+                <h2>Ménages</h2>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <h4>Caractéristiques des ménages en 2013</h4>
+                    <iframe class=" iframe_data" src="../ws/territoire/pop.menage.epci.php?code_geo=200042174&amp;time=2013-02-01"></iframe>
+                  </div>
+                </div>                   
+            </div>  
+            <div role="tabpanel" class="tab-pane" id="h_logement">
+                <h2>Logement</h2>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <h4>Caractéristiques des logements en 2013</h4>
+                    <iframe class=" iframe_data" src="../ws/territoire/logement.commune.php?code_geo=200042174&amp;time=2013-02-01"></iframe>
+                  </div>
+                </div>                   
+            </div>  
+            <div role="tabpanel" class="tab-pane" id="h_economie">   
+                <h2>Economie et emploi</h2> 
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <h4>Caractéristiques des emplois en 2013</h4>
+                    <iframe class=" iframe_data" src="../ws/territoire/eco.emploi.epci.php?code_geo=200042174&amp;time=2013-02-01"></iframe>
+                  </div>
+                </div> 
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <h4>Caractéristiques des établissements économiques en 2014</h4>
+                    <iframe class=" iframe_data" src="../ws/territoire/eco.etablissement.epci.php?code_geo=200042174&amp;time=2014-02-01"></iframe>
+                  </div>
+                </div>    
+            </div>
+            <div role="tabpanel" class="tab-pane" id="h_travail">   
+                <h2>Marché du travail</h2>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <h4> Caractéristiques des demandeur.euse.s d'emploi de catégorie ABC en 2017</h4>
+                    <iframe class=" iframe_data" src="../ws/territoire/dem_emp.cat_abc.epci.php?code_geo=200067981&amp;time=2017-02-01"></iframe>
+                  </div>
+                </div> 
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <h4>Caractéristiques des demandeur.euse.s d'emploi de catégorie A en 2017</h4>
+                    <iframe class=" iframe_data" src="../ws/territoire/dem_emp.cat_a.epci.php?code_geo=200067981&amp;time=2017-02-01"></iframe>
+                  </div>
+                </div>                   
+            </div>            
+        </div>
+        <!-- /Tab pane -->
+    </div>     
+    <!-- /.container -->
+     <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+            <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#myModal">Crédits</a>
+                    </li>
+            </ul>        
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Crédits</h4>
+              </div>
+              <div class="modal-body">
+              </div>
+            </div>
+          </div>
+        </div> 
+    </footer>
+    <!-- /.footer -->
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        var change_codegeo = function (codegeo) {
+            $("iframe").each(function( index, iframe) { 
+                var parameters = {};
+                var url = iframe.src.split("?");
+                var left_url = url[0];
+                var url_parameters = url[1];
+                url_parameters.split("&");
+                $.each(url_parameters.split("&"), function( index, parameter ) {
+                    var p = parameter.split("=");
+                    parameters[p[0]] = p[1];
+                });
+                parameters["code_geo"] = codegeo;
+                var new_parameters=[];
+                $.each(parameters, function( key, value ) {
+                    console.log(key, value);
+                    new_parameters.push(key+"="+value);
+                });
+                
+                
+                var new_url = [left_url, "?", new_parameters.join("&")].join("");
+                 $(iframe).attr('src', new_url);
+                 console.log(iframe, codegeo, new_url);
+                
+             });
+        };
+    
+    </script>
+
+</body>
+
+</html>
